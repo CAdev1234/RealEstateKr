@@ -423,6 +423,14 @@ export default {
     div {
         color: white;
     }
+    div {
+        div {
+            div:nth-child(2n) {
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        }
+    }
 }
 </style>
 

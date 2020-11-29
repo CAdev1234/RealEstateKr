@@ -4,17 +4,20 @@
   </div>
 </template>
 
-<style lang="scss">
+<style>
+button {
+  outline: none;
+}
 button:focus {
   outline: none;
 }
-input:focus {
+input, input:focus {
   outline: none;
 }
-textarea:focus {
+textarea {
   outline: none;
 }
-select:focus {
+select {
   outline: none;
 }
 </style>

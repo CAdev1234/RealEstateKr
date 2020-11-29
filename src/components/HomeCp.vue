@@ -380,17 +380,16 @@
         <path d="M344.775 77.738H298.901" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M344.775 84.9042V77.738" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-
     </div>
     <div class="detail">Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
   </section>
   <section class="vr-section">
     <div class="overlay-effect">
       <div class="title">VR 투어</div>
-      <div class="flex justify-center" style="margin-top:6.5104vw">
-        <div style="width:19.4271vw;height: 18.85417vw;background-color: rgb(196,196,196);margin-left:4.53125vw;margin-right:4.53125vw"></div>
-        <div style="width:19.4271vw;height: 18.85417vw;background-color: rgb(196,196,196);margin-left:4.53125vw;margin-right:4.53125vw"></div>
-        <div style="width:19.4271vw;height: 18.85417vw;background-color: rgb(196,196,196);margin-left:4.53125vw;margin-right:4.53125vw"></div>
+      <div class="lg:flex xl:flex" style="margin-top:125px">
+        <div class="bg-gray-400 md:w-full mb-20 lg:w-4/12 xl:w-4/12 ml-auto mr-auto" style="max-width:370px;height:360px"></div>
+        <div class="bg-gray-400 md:w-full mb-20 lg:w-4/12 xl:w-4/12 ml-auto mr-auto" style="max-width:370px;height:360px"></div>
+        <div class="bg-gray-400 md:w-full lg:w-4/12 xl:w-4/12 ml-auto mr-auto" style="max-width:370px;height:360px"></div>
       </div>
       <p class="detail">
         Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,<br> when an unknown printer took a galley of type and scrambled it to make a type specimen book.<br>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.<br>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,<br> and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
@@ -401,7 +400,7 @@
   <section class="contact-section">
     <div class="overlay-effect">
       <div class="title">문의하기</div>
-      <div class="contact-form">
+      <div class="contact-form w-10/12 sm:w-10/12 md:w-2/3 lg:w-2/3 xl:w-5/12">
         <div class="label-item">
           <div class="text-white">성함</div>
           <div v-if='username === ""' style="background-color: #D81B60"></div>
@@ -454,25 +453,27 @@
       <div class="fixed inset-0 transition-opacity" aria-hidden="true">
         <div class="absolute inset-0" style="background-color:rgba(0, 0, 0, 0.5)"></div>
       </div>
-      <div class="inline-block bg-white rounded-lg transform" 
+      <div class="w-full" 
           role="dialog" aria-modal="true" aria-labelledby="modal-headline"
-          style="position: absolute;top: 50%;left: 50%;transform: translate(-50%, -55%);">
+          style="position: absolute;top: 50%;left: 50%;transform: translate(-50%, -55%);max-width:660px">
         
-        <div class="login-body">
+        <div class="login-body inline-block bg-white rounded-lg transform">
           <div>평행공간 로그인</div>
           <input type="email" placeholder="이메일주소" name="email"/>
           <input type="password" placeholder="비밀번호" name="password"/>
           <div class="check-item">
             <input type="checkbox"><span>이메일 저장</span>
-            <div class="ml-auto">이메일/비밀번호 찾기</div>
+            <a class="ml-auto">이메일/비밀번호 찾기</a>
           </div>
           <button>로그인</button>
           <a href="#">회원가입</a>
         </div>
+
+        <div class="login-close-btn">
+          <button class="text-black" @click="closeLoginDlg()">&#x2573;</button>
+        </div>
       </div>
-      <div class="login-close-btn">
-        <button @click="closeLoginDlg()">&#x2573;</button>
-      </div>
+      
     </div>
   </div>
   
@@ -508,60 +509,61 @@ export default {
       .title {
         text-align: center;
         color: white;
-        font-size: 2.6042vw; 
-        line-height: 2.95573vw;
+        font-size: 50px; 
       }
       .detail {
         color: white;
         text-align: center;
         margin-top: auto;
-        font-size:0.9375vw;
-        line-height:2.0833vw;
+        font-size:18px;
+        line-height:40px;
         font-weight:400
       }
     }
     .first-section {
-      height: 60.729167vw;
       background-color: #00274A;
-      padding-top: 20.83vw;
-      padding-bottom: 15.83vw;
+      padding-top: 400px;
+      padding-bottom: 304px;
       display: flex;
       flex-direction: column;
       svg {
-        width: 18.645833vw;
-        height: 5vw;
         display: inline;
+      }
+      .detail {
+        margin-top: 168px;
       }
     }
 
     .vr-section {
-      height: 74.0625vw;
       background-image: url('../assets/img/vrbg.png');
+      background-size: cover;
+      background-repeat: no-repeat;
       .overlay-effect {
-        width: 100%;
-        height: 100%;
         background-color: rgba(0, 0, 0, 0.6);
-        padding-top: 12.8125vw;
-        padding-bottom: 11.61458vw;
+        padding-top: 250px;
+        padding-bottom: 220px;
         display: flex;
         flex-direction: column;
+      }
+      .detail {
+        margin-top: 168px;
       }
     }
 
     .contact-section {
-      height: 81.822917vw;
       background-image: url('../assets/img/contactbg.png');
+      background-size: cover;
+      background-repeat: no-repeat;
       .overlay-effect {
         width: 100%;
         height: 100%;
         background-color: rgba(0, 0, 0, 0.6);
-        padding-top: 12.552083vw;
-        padding-bottom: 12.552083vw;
+        padding-top: 240px;
+        padding-bottom: 240px;
         display: flex;
         flex-direction: column;
 
         .contact-form {
-          width:41.66667vw;
           margin-left: auto;
           margin-right: auto;
           margin-top: auto;
@@ -569,10 +571,10 @@ export default {
             display: flex;
             align-items: center;
             color: white;
-            margin-bottom: 0.989583vw;
-            margin-top: 2.39583vw;
+            margin-bottom: 20px;
+            margin-top: 46px;
             div:nth-child(1) {
-              font-size: 1.25vw;
+              font-size: 24px;
             }
             div:nth-child(2) {
               width:10px; 
@@ -582,44 +584,49 @@ export default {
             }
           }
           .minus-symbol {
-            width: 3.125vw;
+            width: 60px;
             height: 1px;
             background-color: white;
-            margin-left: 1.04167vw;
-            margin-right: 1.04167vw;
+            margin-left: 20px;
+            margin-right: 20px;
           }
           input {
             width: 100%;
-            height: 3.125vw;
+            height: 60px;
             background-color: rgba(255,255,255,0.7);
             border-radius: 3px;
-            padding-left: 1.197916vw;
+            padding-left: 20px;
           }
           select {
-            width: 30vw;
-            height: 3.125vw;
+            width: 50%;
+            height: 60px;
             background-color: rgba(255,255,255,0.7);
             border-radius: 3px;
-            padding-left: 1.197916vw;
+            padding-left: 20px;
           }
           textarea {
             width: 100%;
-            height: 16.979167vw;
+            height: 300px;
             background-color: rgba(255,255,255,0.7);
             border-radius: 3px;
-            padding-left: 1.197916vw;
-            padding-top: 1.45833vw;
-            font-size: 1.25vw;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 15px;
+            font-size: 20px;
           }
           button {
             background-color: rgba(0,39,74,1);
-            padding-right: 2.7083vw;
-            padding-left: 2.7083vw;
-            padding-top: 0.625vw;
-            padding-bottom: 0.625vw;
+            height: 45px;
+            width: 170px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             border-radius: 3px;
-            margin-top: 4.270833vw;
-            font-size: 0.9375vw;
+            margin-top: 80px;
+            font-size: 18px;
+          }
+          button:hover {
+            background-color: rgba(0,39,74,0.7);
           }
         }
       }
@@ -635,38 +642,37 @@ export default {
       left: 0px;
 
       .login-body {
-        width: 34.4271vw;
-        height: 36.04167vw;
+        height: auto;
         display: flex;
         flex-direction: column;
-        padding-top: 5.2083vw;
-        padding-left: 3.22917vw;
-        padding-right: 3.22917vw;
-        padding-bottom: 3.54167vw;
+        padding-top: 100px;
+        padding-left: 65px;
+        padding-right: 65px;
+        padding-bottom: 55px;
         text-align: center;
         div:nth-child(1) {
-          font-size: 1.77083vw;
+          font-size: 34px;
           font-weight: 700;
           margin-bottom: auto;
         }
         
         input[name="email"] {
-          font-size: 0.9375vw;
+          font-size: 18px;
           border-top: none;
           border-left: none;
           border-right: none;
-          border-bottom: 1px solid rgb(221,221,221);
+          border-bottom: 2px solid #90A4AE;
           padding-bottom: 13px;
           height: 33px;
           margin-top: 40px;
 
         }
         input[name="password"] {
-          font-size: 0.9375vw;
+          font-size: 18px;
           border-top: none;
           border-left: none;
           border-right: none;
-          border-bottom: 1px solid rgb(221,221,221);
+          border-bottom: 2px solid #90A4AE;
           padding-bottom: 13px;
           height: 33px;
           margin-top: 40px;
@@ -674,33 +680,37 @@ export default {
         .check-item {
           display: flex;
           align-items: center;
-          padding-top: 3.22917vw;
+          padding-top: 60px;
           input[type="checkbox"] {
-            width: 0.9375vw;
-            height: 0.9375vw;
+            width: 18px;
+            height: 18px;
           }
           span {
-            font-size: 0.9375vw;
+            font-size: 18px;
             margin-left: 10px;
           }
           div {
-            font-size: 0.9375vw;
+            font-size: 18px;
           }
         }
         button {
-          margin-top: 3.85417vw;
-          margin-bottom: 1.875vw;
+          margin-top: 70px;
+          margin-bottom: 36px;
           display: flex;
           align-items: center;
           justify-content: center;
-          height: 4.01042vw;
+          height: 75px;
           color: white;
           border-radius: 5px;
-          font-size: 1.25vw;
+          font-size: 24px;
           background-color: rgb(0,39,74);
         }
+        button:hover {
+          background-color: rgba(0,39,74,0.9);
+        }
         a {
-          font-size: 0.9375vw;
+          font-size: 18px;
+          cursor: pointer;
         }
         a:hover {
           color: #78909C;
@@ -709,15 +719,18 @@ export default {
       }
 
       .login-close-btn {
+        display: flex;
+        justify-content: center;
         button {
-          position: fixed;
-          bottom: 10%;
-          left: 50%;
-          transform: translate(-50%);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-top: 3.3333vw;
           background: white;
-          width: 2.3333vw;
-          height: 2.3333vw;
+          width: 60px;
+          height: 60px;
           border-radius: 50%;
+          font-size: 18px;
           font-weight: bold;
         }
         button:hover {
